@@ -4,9 +4,9 @@
 
 <img src="public/readme/banner.svg" alt="BioJarvis Lab Banner" width="100%" />
 
-### Research copiloting for molecular science teams
+### A research copilot for molecular science teams
 
-Ask in natural language, inspect structures in 3D, compare pockets, and review evidence confidence in one flow.
+Ask in plain language, inspect structures in 3D, compare pockets, and validate conclusions with evidence layers.
 
 ![Platform](https://img.shields.io/badge/Platform-Next.js%2016-000000?style=for-the-badge&logo=nextdotjs)
 ![Language](https://img.shields.io/badge/Language-TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
@@ -17,30 +17,30 @@ Ask in natural language, inspect structures in 3D, compare pockets, and review e
 
 ---
 
-## ✨ Product Story
+## ✨ Product Walkthrough
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>1) Ask Anything in Context</h3>
-      <p>Start with a plain-English question about targets, mutations, or compounds. BioJarvis keeps follow-up memory and routes requests to text or structure workflows.</p>
+      <h3>1) Start with the research question</h3>
+      <p>Ask about targets, mutations, compounds, or mechanisms. Follow-up context is preserved and routed automatically.</p>
       <img src="public/readme/01-main-workspace.png" alt="Main Workspace" />
     </td>
     <td width="50%" valign="top">
-      <h3>2) Move into Structure-First Analysis</h3>
-      <p>Open fullscreen 3D view, inspect residues and mutation positions, and focus directly on pocket-level interpretation.</p>
+      <h3>2) Move into structure-first analysis</h3>
+      <p>Open fullscreen 3D view, inspect residues and mutation positions, and focus on pocket-level interpretation.</p>
       <img src="public/readme/02-fullscreen-viewer.png" alt="Fullscreen Viewer" />
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>3) Understand What Changed</h3>
-      <p>Use analysis panels to evaluate overlap, drift, and interaction deltas for practical medicinal chemistry interpretation.</p>
+      <h3>3) Understand what changed</h3>
+      <p>Use analysis panels to evaluate overlap, drift, and interaction deltas for practical medicinal chemistry reasoning.</p>
       <img src="public/readme/03-analysis-panel.png" alt="Analysis Panel" />
     </td>
     <td width="50%" valign="top">
-      <h3>4) Decide with Evidence Layers</h3>
-      <p>Review facts, testable ideas, and evidence traces before taking action or sharing recommendations.</p>
+      <h3>4) Decide with evidence layers</h3>
+      <p>Review facts, testable ideas, and evidence traces before sharing recommendations.</p>
       <img src="public/readme/04-evidence-panel.png" alt="Evidence Panel" />
     </td>
   </tr>
@@ -63,16 +63,25 @@ flowchart LR
 
 ---
 
+## ⚡ At A Glance
+
+- **Question to structure in one flow:** chat, routing, and 3D inspection stay connected
+- **Pocket-level interpretation:** compare overlap, drift, and interaction changes quickly
+- **Evidence-first decisions:** separate known facts from hypotheses and supporting traces
+- **Team-ready outputs:** export notebooks, keep history, and share concise research briefs
+
+---
+
 ## 🚀 Core Capabilities
 
 ### Research Copilot
-- Natural-language Q&A for targets, pathways, compounds, and mechanism questions
-- Context-aware follow-up memory across turns
+- Natural-language Q&A for targets, pathways, compounds, and mechanisms
+- Follow-up memory across turns
 - Intent routing between `text_only` and `structure_required`
 - Confidence metadata, policy flags, and source traces
 
 ### Structure Intelligence
-- Interactive 3D structure viewer with mutation and binding-site annotations
+- Interactive 3D viewer with mutation and binding-site annotations
 - Pocket comparison with overlap, drift, and A/B unique residues
 - Interaction metric summaries (hydrophobic, polar, charged deltas)
 - Fullscreen analysis and structure-only screenshot export
@@ -80,13 +89,13 @@ flowchart LR
 ### Explainability & Trust
 - Trust layers: Known Facts, Testable Ideas, Evidence
 - Research card flow: Finding → Context → Confidence/Evidence → Next analysis
-- Provenance drill-down for verification-first decisions
+- Provenance drill-down for verification-first workflows
 
 ### Team Productivity
 - Chat history and favorites for repeatable workflows
 - Notebook export (`.ipynb`) and collaboration brief copy
 - Dataset upload (`.csv`, `.txt`, `.tsv`, `.json`) with mutation extraction
-- Daily usage tracking and quota guardrails
+- Usage tracking and quota guardrails
 
 ---
 
@@ -109,8 +118,8 @@ flowchart LR
 ## 👥 Built For
 
 - **Researchers:** structure-grounded interpretation with evidence traceability
-- **Students:** a clear pathway from question → explanation → confidence
-- **Drug discovery teams:** faster handoff through notebooks, history, and shareable briefs
+- **Students:** a clear path from question → explanation → confidence
+- **Drug discovery teams:** faster handoffs through notebooks, history, and shareable briefs
 
 ---
 
@@ -125,7 +134,7 @@ flowchart LR
 
 ## 🚀 Quick Start
 
-### 1) Install
+### 1) Install dependencies
 
 ```bash
 npm install
@@ -137,7 +146,7 @@ npm install
 cp .env.local.example .env.local
 ```
 
-Required values:
+Required environment variables:
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=...
@@ -152,13 +161,13 @@ GROQ_API_KEY=...
 npm run dev
 ```
 
-Open: http://localhost:3000
+Open `http://localhost:3000`
 
 ---
 
 ## 🔐 Google + GitHub OAuth Setup
 
-The app UI is already wired. You only need provider configuration.
+Auth UI is already wired. Only provider configuration is required.
 
 ### Supabase URL Configuration
 - **Site URL**
@@ -202,7 +211,7 @@ npm run benchmark:guard
 2. Import project
 3. Add environment variables
 4. Deploy
-5. Add production callback URL(s) in Supabase Auth settings
+5. Add production callback URLs in Supabase Auth settings
 
 ### Optional strict evidence mode
 
@@ -236,5 +245,5 @@ When enabled, responses are policy-guarded when primary curated evidence is miss
 ---
 
 <div align="center">
-Built for research velocity, scientific rigor, and explainable decisions.
+Built for research velocity, scientific rigor, and explainable decision-making.
 </div>
