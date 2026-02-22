@@ -1,46 +1,60 @@
 # 🧬 BioJarvis Lab
 
-<div align="center">
+<p align="center">
+  <img src="public/readme/banner.svg" alt="BioJarvis Lab Banner" width="100%" />
+</p>
 
-<img src="public/readme/banner.svg" alt="BioJarvis Lab Banner" width="100%" />
+<p align="center">
+  <strong>Structure-first AI for molecular research.</strong>
+</p>
 
-### A research copilot for molecular science teams
+<p align="center">
+  <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=nextdotjs" alt="Next.js"></a>
+  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"></a>
+  <a href="https://supabase.com/"><img src="https://img.shields.io/badge/Supabase-Auth%20%2B%20Postgres-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase"></a>
+  <img src="https://img.shields.io/badge/Domain-Bioinformatics-00C896?style=for-the-badge" alt="Domain">
+</p>
 
-Ask in plain language, inspect structures in 3D, compare pockets, and validate conclusions with evidence layers.
+BioJarvis helps researchers move from **question → structure → evidence** in one interface. It combines conversational research, 3D molecular analysis, pocket comparison, and evidence-aware trust layers.
 
-![Platform](https://img.shields.io/badge/Platform-Next.js%2016-000000?style=for-the-badge&logo=nextdotjs)
-![Language](https://img.shields.io/badge/Language-TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Backend](https://img.shields.io/badge/Backend-Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
-![Domain](https://img.shields.io/badge/Domain-Bioinformatics-00C896?style=for-the-badge)
-
-</div>
+**Links:** [Product Walkthrough](#product-walkthrough) · [Quick Start](#quick-start) · [How It Works](#how-it-works-short) · [Feature Status](#feature-status) · [OAuth Setup](#google--github-oauth-setup)
 
 ---
 
-## ✨ Product Walkthrough
+## Highlights
+
+- **Research copilot with memory** — multi-turn scientific Q&A with context continuity.
+- **Structure intelligence** — interactive 3D viewer with mutation and site annotations.
+- **Pocket-level reasoning** — overlap/drift deltas and interaction summaries.
+- **Trust-first output** — separates facts, testable ideas, and evidence trails.
+- **Team-ready output** — notebook export (`.ipynb`), favorites, history, and collaboration briefs.
+
+---
+
+## Product Walkthrough
 
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>1) Start with the research question</h3>
-      <p>Ask about targets, mutations, compounds, or mechanisms. Follow-up context is preserved and routed automatically.</p>
+      <h3>1) Ask in natural language</h3>
+      <p>Start from a biological question and keep follow-up context intact across turns.</p>
       <img src="public/readme/01-main-workspace.png" alt="Main Workspace" />
     </td>
     <td width="50%" valign="top">
-      <h3>2) Move into structure-first analysis</h3>
-      <p>Open fullscreen 3D view, inspect residues and mutation positions, and focus on pocket-level interpretation.</p>
+      <h3>2) Inspect in fullscreen 3D</h3>
+      <p>Switch to structure mode, inspect residues, and reason around mutation impact.</p>
       <img src="public/readme/02-fullscreen-viewer.png" alt="Fullscreen Viewer" />
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>3) Understand what changed</h3>
-      <p>Use analysis panels to evaluate overlap, drift, and interaction deltas for practical medicinal chemistry reasoning.</p>
+      <h3>3) Compare changes quickly</h3>
+      <p>Use analysis panels to interpret overlap, drift, and interaction differences.</p>
       <img src="public/readme/03-analysis-panel.png" alt="Analysis Panel" />
     </td>
     <td width="50%" valign="top">
-      <h3>4) Decide with evidence layers</h3>
-      <p>Review facts, testable ideas, and evidence traces before sharing recommendations.</p>
+      <h3>4) Validate with evidence</h3>
+      <p>Review confidence and provenance before sharing conclusions.</p>
       <img src="public/readme/04-evidence-panel.png" alt="Evidence Panel" />
     </td>
   </tr>
@@ -48,105 +62,91 @@ Ask in plain language, inspect structures in 3D, compare pockets, and validate c
 
 ---
 
-## 🧠 How BioJarvis Works
+## How It Works (short)
 
-```mermaid
-flowchart LR
-  A[Research Question] --> B[Intent Router]
-  B --> C[Text Response Path]
-  B --> D[Structure Analysis Path]
-  D --> E[3D Viewer + Pocket Compare]
-  C --> F[Evidence Layering]
-  E --> F
-  F --> G[Research Decision]
+```text
+Research Question
+      │
+      ▼
+┌──────────────────────────────┐
+│      Intent Router           │
+│ text_only / structure_needed │
+└──────────────┬───────────────┘
+               │
+     ┌─────────┴─────────┐
+     ▼                   ▼
+Text response       3D structure pipeline
+     │                   │
+     └─────────┬─────────┘
+               ▼
+      Trust + Evidence Layers
+               │
+               ▼
+         Research Decision
 ```
 
 ---
 
-## ⚡ At A Glance
+## Everything Built So Far
 
-- **Question to structure in one flow:** chat, routing, and 3D inspection stay connected
-- **Pocket-level interpretation:** compare overlap, drift, and interaction changes quickly
-- **Evidence-first decisions:** separate known facts from hypotheses and supporting traces
-- **Team-ready outputs:** export notebooks, keep history, and share concise research briefs
+### Core research workflow
+- Conversational Q&A with follow-up memory
+- Intent routing between text and structure workflows
+- Confidence signals, policy flags, and citations/provenance metadata
 
----
+### Structure & pocket analysis
+- Interactive 3D structure viewer
+- Mutation + binding-site annotation support
+- Pocket comparison (overlap, drift, A/B unique residues)
+- Interaction deltas (hydrophobic/polar/charged)
 
-## 🚀 Core Capabilities
+### Trust & explainability
+- Trust layers: **Known Facts**, **Testable Ideas**, **Evidence**
+- Research card progression: Finding → Context → Confidence → Next analysis
+- Drilldown-ready evidence/provenance panels
 
-### Research Copilot
-- Natural-language Q&A for targets, pathways, compounds, and mechanisms
-- Follow-up memory across turns
-- Intent routing between `text_only` and `structure_required`
-- Confidence metadata, policy flags, and source traces
+### Productivity & collaboration
+- Query history and favorites
+- Notebook export (`.ipynb`)
+- Shareable collaboration brief
+- File upload parsing (`.csv`, `.txt`, `.tsv`, `.json`) with mutation extraction
 
-### Structure Intelligence
-- Interactive 3D viewer with mutation and binding-site annotations
-- Pocket comparison with overlap, drift, and A/B unique residues
-- Interaction metric summaries (hydrophobic, polar, charged deltas)
-- Fullscreen analysis and structure-only screenshot export
-
-### Explainability & Trust
-- Trust layers: Known Facts, Testable Ideas, Evidence
-- Research card flow: Finding → Context → Confidence/Evidence → Next analysis
-- Provenance drill-down for verification-first workflows
-
-### Team Productivity
-- Chat history and favorites for repeatable workflows
-- Notebook export (`.ipynb`) and collaboration brief copy
-- Dataset upload (`.csv`, `.txt`, `.tsv`, `.json`) with mutation extraction
-- Usage tracking and quota guardrails
+### Ops & guardrails
+- Supabase auth: email/password + Google/GitHub OAuth
+- Daily usage tracking
+- Accuracy/drift benchmark scripts
 
 ---
 
-## 🧭 Feature Status
+## Feature Status
 
-| Capability | Status | Details |
+| Capability | Status | Notes |
 |---|---|---|
-| Research Chat + Follow-up Memory | ✅ Implemented | Multi-turn continuity and intent routing |
-| 3D Structure Viewer | ✅ Implemented | Mutation + site annotations |
+| Research Chat + Follow-up Memory | ✅ Implemented | Multi-turn continuity + intent routing |
+| 3D Structure Viewer | ✅ Implemented | Mutation/site annotations |
 | Pocket Comparison | ✅ Implemented | Overlap, drift, interaction deltas |
 | Trust Layers + Evidence UI | ✅ Implemented | Fact/hypothesis/evidence separation |
-| OAuth (Google/GitHub) | ✅ Implemented | Requires provider credentials in Supabase |
-| Export & Collaboration | ✅ Implemented | `.ipynb` export + copy brief |
-| Evidence Filtering by Tier | 🚧 In Progress | Planned advanced filter controls |
+| OAuth (Google/GitHub) | ✅ Implemented | Provider credentials required in Supabase |
+| Export + Collaboration | ✅ Implemented | `.ipynb` export + collaboration brief |
+| Evidence Tier Filtering | 🚧 In Progress | Planned deeper filtering controls |
 | Potency Snapshot Blocks | 🚧 In Progress | Planned faster medicinal chemistry scan |
 | Multi-model fallback orchestration | 🚧 In Progress | Planned reliability/latency balancing |
 
 ---
 
-## 👥 Built For
+## Quick Start
 
-- **Researchers:** structure-grounded interpretation with evidence traceability
-- **Students:** a clear path from question → explanation → confidence
-- **Drug discovery teams:** faster handoffs through notebooks, history, and shareable briefs
+Runtime: **Node.js 20+** recommended.
 
----
-
-## 🛠 Tech Stack
-
-- **Frontend:** Next.js (App Router), React, TypeScript
-- **UI:** Tailwind CSS + shadcn/ui primitives
-- **Backend:** Supabase (Auth + Postgres)
-- **Data Integrations:** PDB, ChEMBL, UniProt, PubMed (MCP-style clients)
-
----
-
-## 🚀 Quick Start
-
-### 1) Install dependencies
+### 1) Install
 
 ```bash
 npm install
 ```
 
-### 2) Configure environment
+### 2) Create environment file
 
-```bash
-cp .env.local.example .env.local
-```
-
-Required environment variables:
+Create `.env.local` in the project root with:
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=...
@@ -155,43 +155,17 @@ SUPABASE_SERVICE_ROLE_KEY=...
 GROQ_API_KEY=...
 ```
 
-### 3) Run locally
+### 3) Start development server
 
 ```bash
 npm run dev
 ```
 
-Open `http://localhost:3000`
+Open: `http://localhost:3000`
 
 ---
 
-## 🔐 Google + GitHub OAuth Setup
-
-Auth UI is already wired. Only provider configuration is required.
-
-### Supabase URL Configuration
-- **Site URL**
-  - Local: `http://localhost:3000`
-  - Prod: `https://your-domain.com`
-- **Redirect URLs**
-  - `http://localhost:3000/auth/callback`
-  - `https://your-domain.com/auth/callback`
-
-### Google OAuth
-- Create OAuth Web client in Google Cloud Console
-- Redirect URI:
-  - `https://<SUPABASE_PROJECT_REF>.supabase.co/auth/v1/callback`
-- Copy Client ID/Secret into Supabase → Auth → Providers → Google
-
-### GitHub OAuth
-- Create OAuth App in GitHub Developer Settings
-- Authorization callback URL:
-  - `https://<SUPABASE_PROJECT_REF>.supabase.co/auth/v1/callback`
-- Copy Client ID/Secret into Supabase → Auth → Providers → GitHub
-
----
-
-## 📜 Scripts
+## Scripts
 
 ```bash
 npm run dev
@@ -199,19 +173,46 @@ npm run lint
 npm run build
 npm run benchmark:accuracy
 npm run benchmark:question-types
+npm run benchmark:drift
 npm run benchmark:guard
 ```
 
 ---
 
-## 📦 Deployment
+## Google + GitHub OAuth Setup
+
+The auth UI is already wired; configure providers in Supabase.
+
+### Supabase URL configuration
+- Site URL:
+  - `http://localhost:3000` (local)
+  - `https://your-domain.com` (prod)
+- Redirect URLs:
+  - `http://localhost:3000/auth/callback`
+  - `https://your-domain.com/auth/callback`
+
+### Google OAuth
+- Create OAuth Web client in Google Cloud Console
+- Use callback URI:
+  - `https://<SUPABASE_PROJECT_REF>.supabase.co/auth/v1/callback`
+- Add client ID/secret in Supabase → Auth → Providers → Google
+
+### GitHub OAuth
+- Create OAuth App in GitHub Developer Settings
+- Set authorization callback URL:
+  - `https://<SUPABASE_PROJECT_REF>.supabase.co/auth/v1/callback`
+- Add client ID/secret in Supabase → Auth → Providers → GitHub
+
+---
+
+## Deployment
 
 ### Vercel / Netlify
-1. Push repo
+1. Push repository
 2. Import project
 3. Add environment variables
 4. Deploy
-5. Add production callback URLs in Supabase Auth settings
+5. Add production callback URLs in Supabase auth settings
 
 ### Optional strict evidence mode
 
@@ -219,20 +220,29 @@ npm run benchmark:guard
 BIOJARVIS_STRICT_EVIDENCE_POLICY=true
 ```
 
-When enabled, responses are policy-guarded when primary curated evidence is missing.
+When enabled, answers are policy-guarded when primary curated evidence is missing.
 
 ---
 
-## 🤝 Contributing
+## Tech Stack
 
-1. Fork repository
-2. Create feature branch
+- **Frontend:** Next.js (App Router), React, TypeScript
+- **UI:** Tailwind CSS + shadcn/ui
+- **Backend:** Supabase (Auth + Postgres)
+- **Data integrations:** PDB, ChEMBL, UniProt, PubMed (MCP-style clients)
+
+---
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
 3. Make focused changes
-4. Open pull request
+4. Open a pull request
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Anthropic
 - Supabase
@@ -245,5 +255,5 @@ When enabled, responses are policy-guarded when primary curated evidence is miss
 ---
 
 <div align="center">
-Built for research velocity, scientific rigor, and explainable decision-making.
+Built for research velocity, scientific rigor, and explainable decisions.
 </div>
