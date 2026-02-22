@@ -4,7 +4,9 @@
 
 <img src="public/readme/banner.svg" alt="BioJarvis Lab Banner" width="100%" />
 
-AI-powered bioinformatics workspace for structure-first research, evidence-aware Q&A, and pocket-level comparison.
+### Research copiloting for molecular science teams
+
+Ask in natural language, inspect structures in 3D, compare pockets, and review evidence confidence in one flow.
 
 ![Platform](https://img.shields.io/badge/Platform-Next.js%2016-000000?style=for-the-badge&logo=nextdotjs)
 ![Language](https://img.shields.io/badge/Language-TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
@@ -15,77 +17,82 @@ AI-powered bioinformatics workspace for structure-first research, evidence-aware
 
 ---
 
-## 🖼 Product Preview
+## ✨ Product Story
 
 <table>
   <tr>
-    <td width="50%" align="center"><b>Main Workspace</b></td>
-    <td width="50%" align="center"><b>Fullscreen Structure View</b></td>
+    <td width="50%" valign="top">
+      <h3>1) Ask Anything in Context</h3>
+      <p>Start with a plain-English question about targets, mutations, or compounds. BioJarvis keeps follow-up memory and routes requests to text or structure workflows.</p>
+      <img src="public/readme/01-main-workspace.png" alt="Main Workspace" />
+    </td>
+    <td width="50%" valign="top">
+      <h3>2) Move into Structure-First Analysis</h3>
+      <p>Open fullscreen 3D view, inspect residues and mutation positions, and focus directly on pocket-level interpretation.</p>
+      <img src="public/readme/02-fullscreen-viewer.png" alt="Fullscreen Viewer" />
+    </td>
   </tr>
   <tr>
-    <td><img src="public/readme/01-main-workspace.png" alt="Main Workspace Preview" /></td>
-    <td><img src="public/readme/02-fullscreen-viewer.png" alt="Fullscreen Structure View Preview" /></td>
-  </tr>
-  <tr>
-    <td width="50%" align="center"><b>Analysis Panel</b></td>
-    <td width="50%" align="center"><b>Evidence Panel</b></td>
-  </tr>
-  <tr>
-    <td><img src="public/readme/03-analysis-panel.png" alt="Analysis Panel Preview" /></td>
-    <td><img src="public/readme/04-evidence-panel.png" alt="Evidence Panel Preview" /></td>
+    <td width="50%" valign="top">
+      <h3>3) Understand What Changed</h3>
+      <p>Use analysis panels to evaluate overlap, drift, and interaction deltas for practical medicinal chemistry interpretation.</p>
+      <img src="public/readme/03-analysis-panel.png" alt="Analysis Panel" />
+    </td>
+    <td width="50%" valign="top">
+      <h3>4) Decide with Evidence Layers</h3>
+      <p>Review facts, testable ideas, and evidence traces before taking action or sharing recommendations.</p>
+      <img src="public/readme/04-evidence-panel.png" alt="Evidence Panel" />
+    </td>
   </tr>
 </table>
 
 ---
 
-## ✨ Why BioJarvis
+## 🧠 How BioJarvis Works
 
-BioJarvis helps researchers move from question → structure → evidence faster:
-
-- Ask complex biological questions in plain language
-- Load protein structures and mutation context directly in chat flow
-- Compare binding pockets side-by-side with actionable differences
-- Review trust layers (facts, testable ideas, evidence) before decisions
+```mermaid
+flowchart LR
+  A[Research Question] --> B[Intent Router]
+  B --> C[Text Response Path]
+  B --> D[Structure Analysis Path]
+  D --> E[3D Viewer + Pocket Compare]
+  C --> F[Evidence Layering]
+  E --> F
+  F --> G[Research Decision]
+```
 
 ---
 
-## 🧪 Core Capabilities
+## 🚀 Core Capabilities
 
-### 1) Research Chat
-- Natural-language Q&A for drugs, targets, pathways, and structures
+### Research Copilot
+- Natural-language Q&A for targets, pathways, compounds, and mechanism questions
 - Context-aware follow-up memory across turns
-- Intent routing (`text_only` vs `structure_required`)
-- Confidence/uncertainty metadata, policy flags, and source links
+- Intent routing between `text_only` and `structure_required`
+- Confidence metadata, policy flags, and source traces
 
-### 2) Structure & Pocket Analysis
-- Interactive 3D structure viewer (PDB-aware)
-- Binding-site + mutation annotations
-- Pocket comparison mode (overlap, drift, A/B unique residues)
-- Interaction metrics table (hydrophobic/polar/charged deltas)
-- Fullscreen-first analysis and structure-only screenshot export
+### Structure Intelligence
+- Interactive 3D structure viewer with mutation and binding-site annotations
+- Pocket comparison with overlap, drift, and A/B unique residues
+- Interaction metric summaries (hydrophobic, polar, charged deltas)
+- Fullscreen analysis and structure-only screenshot export
 
-### 3) Trust & Explainability
-- Trust layers summary: Known Facts, Testable Ideas, Evidence
-- Research-focused cards: Finding → Context → Confidence/Evidence → Next analysis
-- Evidence/provenance drilldown for verification workflow
+### Explainability & Trust
+- Trust layers: Known Facts, Testable Ideas, Evidence
+- Research card flow: Finding → Context → Confidence/Evidence → Next analysis
+- Provenance drill-down for verification-first decisions
 
-### 4) Productivity & Collaboration
-- Notebook export (`.ipynb`) from chat
-- Copy collaboration brief for handoff
-- Suggested starter prompts in empty state
+### Team Productivity
+- Chat history and favorites for repeatable workflows
+- Notebook export (`.ipynb`) and collaboration brief copy
 - Dataset upload (`.csv`, `.txt`, `.tsv`, `.json`) with mutation extraction
-
-### 5) Account, History, and Guardrails
-- Supabase auth: email/password + Google/GitHub OAuth
-- Threaded query history + favorites
-- Daily usage tracking and quota controls
-- Benchmark accuracy + drift guard scripts
+- Daily usage tracking and quota guardrails
 
 ---
 
 ## 🧭 Feature Status
 
-| Area | Status | Notes |
+| Capability | Status | Details |
 |---|---|---|
 | Research Chat + Follow-up Memory | ✅ Implemented | Multi-turn continuity and intent routing |
 | 3D Structure Viewer | ✅ Implemented | Mutation + site annotations |
@@ -97,10 +104,13 @@ BioJarvis helps researchers move from question → structure → evidence faster
 | Potency Snapshot Blocks | 🚧 In Progress | Planned faster medicinal chemistry scan |
 | Multi-model fallback orchestration | 🚧 In Progress | Planned reliability/latency balancing |
 
-### Who this helps
-- **Researchers:** structure-grounded insights and evidence traceability in one workspace
-- **Students/Learners:** clearer path from question to explanation to evidence
-- **Teams:** faster handoff via history threads, brief export, and notebooks
+---
+
+## 👥 Built For
+
+- **Researchers:** structure-grounded interpretation with evidence traceability
+- **Students:** a clear pathway from question → explanation → confidence
+- **Drug discovery teams:** faster handoff through notebooks, history, and shareable briefs
 
 ---
 
@@ -201,16 +211,6 @@ BIOJARVIS_STRICT_EVIDENCE_POLICY=true
 ```
 
 When enabled, responses are policy-guarded when primary curated evidence is missing.
-
----
-
-## 🧹 Repository Hygiene
-
-Local-only temp/design/debug artifacts are excluded via `.gitignore`.
-Examples:
-- logs and generated reports
-- local temp folders (`tmpclaude-*`, backups)
-- design/prototype assets (`stitch/`, `.fig`, `.psd`, `.lottie`, etc.)
 
 ---
 
