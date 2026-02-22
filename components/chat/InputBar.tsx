@@ -12,6 +12,53 @@ export function InputBar({ onSend, loading = false }: InputBarProps) {
   const [input, setInput] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  function detectTargetAnchor(raw: string, mutations: string[]) {
+    const geneMatchPattern = /\b([A-Z0-9]{2,12})\s*[,\t:|; ]+\s*([A-Z]\d+[A-Z])\b/g;
+    const counts = new Map<string, number>();
+
+    let match: RegExpExecArray | null = null;
+    while ((match = geneMatchPattern.exec(raw.toUpperCase())) !== null) {
+      const gene = match[1];
+      const mutation = match[2];
+      if (!mutations.includes(mutation)) continue;
+      counts.set(gene, (counts.get(gene) || 0) + 1);
+    }
+
+    if (counts.size > 0) {
+      return [...counts.entries()].sort((a, b) => b[1] - a[1])[0][0];
+    }
+
+    const knownTargets = [
+      "EGFR",
+      "BRCA1",
+      "BRCA2",
+      "TP53",
+      "ALK",
+      "KRAS",
+      "BRAF",
+      "PIK3CA",
+      "ERBB2",
+      "MET",
+      "JAK2",
+      "FLT3",
+      "NTRK1",
+      "ROS1",
+      "RET",
+      "PTEN",
+      "CDK4",
+      "CDK6",
+      "KIT",
+      "PDGFRA",
+    ];
+
+    for (const target of knownTargets) {
+      const targetPattern = new RegExp(`\\b${target}\\b`, "i");
+      if (targetPattern.test(raw)) return target;
+    }
+
+    return null;
+  }
+
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const message = input.trim();
@@ -35,10 +82,14 @@ export function InputBar({ onSend, loading = false }: InputBarProps) {
       const raw = await file.text();
       const matches = raw.toUpperCase().match(/\b[A-Z]\d+[A-Z]\b/g) || [];
       const uniqueMutations = Array.from(new Set(matches)).slice(0, 50);
+      const targetAnchor = detectTargetAnchor(raw, uniqueMutations);
+      const anchorSuffix = targetAnchor
+        ? `\nTarget anchor: ${targetAnchor}\nStructure request: show ${targetAnchor} structure and map these mutations if available.`
+        : "";
 
       const payload =
         uniqueMutations.length > 0
-          ? `Analyze this uploaded variant panel from file \"${file.name}\".\nMutations: ${uniqueMutations.join(", ")}\n\nPlease: (1) group likely functional impact, (2) map structure relevance where available, (3) flag uncertain interpretations.`
+          ? `Analyze this uploaded variant panel from file \"${file.name}\".\nMutations: ${uniqueMutations.join(", ")}\n\nPlease: (1) group likely functional impact, (2) map structure relevance where available, (3) flag uncertain interpretations.${anchorSuffix}`
           : `I uploaded \"${file.name}\". Please analyze this dataset and summarize key scientific findings, confidence, and limitations:\n\n${raw.slice(0, 3000)}`;
 
       onSend(payload);
