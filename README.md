@@ -19,6 +19,13 @@ BioJarvis helps researchers move from **question → structure → evidence** in
 
 **Links:** [Product Walkthrough](#product-walkthrough) · [Quick Start](#quick-start) · [How It Works](#how-it-works-short) · [Feature Status](#feature-status) · [OAuth Setup](#google--github-oauth-setup)
 
+> **Try in 2 minutes:** Add `.env.local` → run `npm install` → run `npm run dev`.
+
+<p>
+  <a href="#quick-start"><img src="https://img.shields.io/badge/Run-Quick%20Start-111111?style=for-the-badge" alt="Quick Start"></a>
+  <a href="#product-walkthrough"><img src="https://img.shields.io/badge/View-Product%20Walkthrough-0A66C2?style=for-the-badge" alt="Product Walkthrough"></a>
+</p>
+
 ---
 
 ## Highlights
@@ -28,6 +35,14 @@ BioJarvis helps researchers move from **question → structure → evidence** in
 - **Pocket-level reasoning** — overlap/drift deltas and interaction summaries.
 - **Trust-first output** — separates facts, testable ideas, and evidence trails.
 - **Team-ready output** — notebook export (`.ipynb`), favorites, history, and collaboration briefs.
+
+---
+
+## Demo Flow
+
+1. Ask a question about a target/mutation in chat.
+2. Open structure mode and inspect residues + pocket deltas.
+3. Validate decision quality using facts/hypotheses/evidence layers.
 
 ---
 
@@ -92,29 +107,29 @@ Text response       3D structure pipeline
 ### Core research workflow
 - Conversational Q&A with follow-up memory
 - Intent routing between text and structure workflows
-- Confidence signals, policy flags, and citations/provenance metadata
+- Confidence signals, policy flags, and provenance traces
 
 ### Structure & pocket analysis
 - Interactive 3D structure viewer
-- Mutation + binding-site annotation support
+- Mutation and binding-site annotations
 - Pocket comparison (overlap, drift, A/B unique residues)
 - Interaction deltas (hydrophobic/polar/charged)
 
 ### Trust & explainability
 - Trust layers: **Known Facts**, **Testable Ideas**, **Evidence**
 - Research card progression: Finding → Context → Confidence → Next analysis
-- Drilldown-ready evidence/provenance panels
+- Drilldown-ready evidence panels
 
 ### Productivity & collaboration
 - Query history and favorites
 - Notebook export (`.ipynb`)
 - Shareable collaboration brief
-- File upload parsing (`.csv`, `.txt`, `.tsv`, `.json`) with mutation extraction
+- Upload parsing (`.csv`, `.txt`, `.tsv`, `.json`) with mutation extraction
 
 ### Ops & guardrails
 - Supabase auth: email/password + Google/GitHub OAuth
 - Daily usage tracking
-- Accuracy/drift benchmark scripts
+- Accuracy and drift benchmark scripts
 
 ---
 
