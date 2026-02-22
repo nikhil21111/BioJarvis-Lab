@@ -1,13 +1,1 @@
-<svg width="960" height="540" viewBox="0 0 960 540" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="960" height="540" rx="16" fill="#090C13"/>
-  <rect x="20" y="20" width="920" height="56" rx="12" fill="#111723"/>
-  <text x="40" y="55" fill="#13EC92" font-size="18" font-family="Segoe UI, Arial, sans-serif">3D Structure Viewer</text>
-  <rect x="20" y="92" width="920" height="356" rx="12" fill="#121826"/>
-  <circle cx="470" cy="268" r="122" fill="#1D2E49"/>
-  <path d="M370 278C420 200 520 190 572 278C522 356 420 366 370 278Z" fill="#13EC92" fill-opacity="0.55"/>
-  <rect x="20" y="464" width="920" height="56" rx="12" fill="#131E33"/>
-  <rect x="40" y="482" width="260" height="20" rx="8" fill="#13EC92" fill-opacity="0.45"/>
-  <rect x="316" y="482" width="260" height="20" rx="8" fill="#2DA1FF" fill-opacity="0.35"/>
-  <rect x="592" y="482" width="328" height="20" rx="8" fill="#A06BFF" fill-opacity="0.35"/>
-  <text x="40" y="531" fill="#8EA4C9" font-size="16" font-family="Segoe UI, Arial, sans-serif">Preview: mutation annotations + trust layer stack</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" fill="none" viewBox="0 0 960 540"><rect width="960" height="540" fill="#090C13" rx="16"/><rect width="920" height="56" x="20" y="20" fill="#111723" rx="12"/><text x="40" y="55" fill="#13EC92" font-family="Segoe UI, Arial, sans-serif" font-size="18">3D Structure Viewer</text><rect width="920" height="356" x="20" y="92" fill="#121826" rx="12"/><circle cx="470" cy="268" r="122" fill="#1D2E49"/><path fill="#13EC92" fill-opacity=".55" d="M370 278C420 200 520 190 572 278C522 356 420 366 370 278Z"/><rect width="920" height="56" x="20" y="464" fill="#131E33" rx="12"/><rect width="260" height="20" x="40" y="482" fill="#13EC92" fill-opacity=".45" rx="8"/><rect width="260" height="20" x="316" y="482" fill="#2DA1FF" fill-opacity=".35" rx="8"/><rect width="328" height="20" x="592" y="482" fill="#A06BFF" fill-opacity=".35" rx="8"/><text x="40" y="531" fill="#8EA4C9" font-family="Segoe UI, Arial, sans-serif" font-size="16">Preview: mutation annotations + trust layer stack</text></svg>
