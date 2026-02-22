@@ -19,14 +19,20 @@ AI-powered bioinformatics workspace for structure-first research, evidence-aware
 
 <table>
   <tr>
-    <td width="33%" align="center"><b>Research Chat</b></td>
-    <td width="33%" align="center"><b>3D Viewer</b></td>
-    <td width="33%" align="center"><b>Pocket Compare</b></td>
+    <td width="50%" align="center"><b>Main Workspace</b></td>
+    <td width="50%" align="center"><b>Fullscreen Structure View</b></td>
   </tr>
   <tr>
-    <td><img src="public/readme/01-hero-dashboard.png" alt="Research Chat Preview" /></td>
-    <td><img src="public/readme/02-structure-fullscreen.png" alt="3D Viewer Preview" /></td>
-    <td><img src="public/readme/03-pocket-compare.png" alt="Pocket Compare Preview" /></td>
+    <td><img src="public/readme/01-main-workspace.png" alt="Main Workspace Preview" /></td>
+    <td><img src="public/readme/02-fullscreen-viewer.png" alt="Fullscreen Structure View Preview" /></td>
+  </tr>
+  <tr>
+    <td width="50%" align="center"><b>Analysis Panel</b></td>
+    <td width="50%" align="center"><b>Evidence Panel</b></td>
+  </tr>
+  <tr>
+    <td><img src="public/readme/03-analysis-panel.png" alt="Analysis Panel Preview" /></td>
+    <td><img src="public/readme/04-evidence-panel.png" alt="Evidence Panel Preview" /></td>
   </tr>
 </table>
 
