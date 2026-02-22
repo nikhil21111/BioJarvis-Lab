@@ -26,11 +26,9 @@ AI-powered bioinformatics workspace for structure-first research, evidence-aware
   <tr>
     <td><img src="public/readme/01-hero-dashboard.png" alt="Research Chat Preview" /></td>
     <td><img src="public/readme/02-structure-fullscreen.png" alt="3D Viewer Preview" /></td>
-    <td><img src="public/readme/shot-compare.svg" alt="Pocket Compare Preview" /></td>
+    <td><img src="public/readme/03-pocket-compare.png" alt="Pocket Compare Preview" /></td>
   </tr>
 </table>
-
-> Tip: `Research Chat` and `3D Viewer` now use real screenshots; add `03-pocket-compare.png` and `04-trust-layers.png` into `public/readme/` to fully replace placeholders.
 
 ---
 
